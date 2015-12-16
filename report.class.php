@@ -568,15 +568,13 @@
                 echo html_writer::tag('style',
                     '#page-blocks-configurable_reports-viewreport .generaltable {
                     overflow: auto;
-                    width: 100%;
-                    display: block;}');
+                    width: 100%;}');
                 break;
             case 'html':
                 echo html_writer::tag('style',
                     '#page-blocks-configurable_reports-viewreport .generaltable {
                     overflow: auto;
-                    width: 100%;
-                    display: block;}');
+                    width: 100%;}');
                 break;
             default: break;
         }
