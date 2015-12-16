@@ -732,16 +732,21 @@
 			}
 
             // Report statistics
+			if(!empty($this->finalreport->calcs->data[0])){
+				//echo '<br /><br /><br /><div class="centerpara"><b>'."Compliance Results".'</b></div><br />';
+				//echo print_r($this->finalreport->calcs->data[0]);
+				echo '<br /><div class="centerpara"><b>'.$this->finalreport->calcs->data[0][3].'</b></div><br />';
+			}
             $a = new stdClass();
             $a->totalrecords = $this->totalrecords;
             echo html_writer::tag('div',get_string('totalrecords','block_configurable_reports',$a),array('id'=>'totalrecords'));
 
             echo html_writer::tag('div',get_string('lastexecutiontime','block_configurable_reports',$this->config->lastexecutiontime/1000),array('id'=>'lastexecutiontime'));
 
-            if(!empty($this->finalreport->calcs->data[0])){
+/*            if(!empty($this->finalreport->calcs->data[0])){
 				echo '<br /><br /><br /><div class="centerpara"><b>'.get_string("columncalculations","block_configurable_reports").'</b></div><br />';
 				echo html_writer::table($this->finalreport->calcs);
-			}
+			}*/
 			echo "</div>";
 
 			$this->print_export_options();
