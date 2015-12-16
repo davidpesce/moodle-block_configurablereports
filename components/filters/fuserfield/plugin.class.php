@@ -140,7 +140,7 @@ class plugin_fuserfield extends plugin_base{
 					$selectname = $field->name;
 
 					list($usql, $params) = $remotedb->get_in_or_equal($userlist);
-					$sql = "SELECT DISTINCT(data) as data FROM {user_info_data} WHERE fieldid = ? AND userid $usql";
+					$sql = "SELECT DISTINCT(data) as data FROM {user_info_data} WHERE fieldid = ? AND userid $usql ORDER BY data";
 					$params = array_merge(array($field->id),$params);
 
 					if($infodata = $remotedb->get_records_sql($sql,$params)){
