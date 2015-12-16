@@ -44,7 +44,13 @@ class report_sql extends report_base {
             $sql = str_replace('%%FILTER_VAR%%', $filter_var, $sql);
         }
 
-        $sql = str_replace('%%USERID%%', $USER->id, $sql);
+		$unfirst = $USER->firstname;
+		$unlast = $USER->lastname;
+		$userfullname = $unfirst . ' ' . $unlast;
+
+		$sql = str_replace('%%USERID%%', $userfullname, $sql);
+
+        //MODIFIED $sql = str_replace('%%USERID%%', $USER->id, $sql);
         $sql = str_replace('%%COURSEID%%', $COURSE->id, $sql);
         $sql = str_replace('%%CATEGORYID%%', $COURSE->category, $sql);
 
