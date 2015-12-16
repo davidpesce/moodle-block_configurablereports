@@ -735,7 +735,7 @@
 			if(!empty($this->finalreport->calcs->data[0])){
 				//echo '<br /><br /><br /><div class="centerpara"><b>'."Compliance Results".'</b></div><br />';
 				//echo print_r($this->finalreport->calcs->data[0]);
-				echo '<br /><div class="centerpara"><b>'.$this->finalreport->calcs->data[0][3].'</b></div><br />';
+				echo '<br /><div class="centerpara"><b>'.$this->finalreport->calcs->data[0][4].'% Compliant</b></div><br />';
 			}
             $a = new stdClass();
             $a->totalrecords = $this->totalrecords;

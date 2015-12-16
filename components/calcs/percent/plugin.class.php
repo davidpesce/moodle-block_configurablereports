@@ -97,8 +97,6 @@ class plugin_percent extends plugin_base{
 		}
 
 		$result = ($resultrows / $totalrows) * 100;
-		$result = (string)$result;
-		$result = $result . "% Compliant";
 
 		return $result;
 	}
