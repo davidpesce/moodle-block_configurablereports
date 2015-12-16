@@ -88,10 +88,9 @@
 
             $managereporturl =  new moodle_url($CFG->wwwroot.'/blocks/configurable_reports/managereport.php',array('courseid'=>$report->courseid));
             $PAGE->navbar->add(get_string('managereports','block_configurable_reports'), $managereporturl);
-
-            $PAGE->navbar->add($report->name);
         }
 
+		$PAGE->navbar->add($report->name);
 		$PAGE->set_title($reportname);
 		$PAGE->set_heading( $reportname);
 		$PAGE->set_cacheable( true);
