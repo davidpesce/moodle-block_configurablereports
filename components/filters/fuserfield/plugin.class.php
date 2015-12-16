@@ -51,6 +51,15 @@ class plugin_fuserfield extends plugin_base{
 		$filter_fuserfield = optional_param('filter_fuserfield_'.$data->field,0,PARAM_RAW);
 		$filter = clean_param(base64_decode($filter_fuserfield),PARAM_CLEAN);
 
+		if($filter_fuserfield && preg_match_all("/%%FILTER_USERS:([^%]+)%%/i",$finalelements, $output)){
+			foreach($output[1] as $filtervalue){
+				if(str_replace("myuser.", "", $filtervalue)==str_replace("profile_", "", $data->field)){
+					$replace = ' AND '.$filtervalue.' LIKE '. "'%$filter%'";
+					return str_replace('%%FILTER_USERS:'.$filtervalue.'%%',$replace,$finalelements);
+				}
+			}
+		}
+
 		if($filter_fuserfield &&
 		   preg_match("/%%FILTER_USERS:([^%]+)%%/i",$finalelements, $output)){
 			$replace = ' AND '.$output[1].' LIKE '. "'%$filter%'";
