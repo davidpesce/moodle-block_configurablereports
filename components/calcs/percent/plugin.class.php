@@ -97,6 +97,7 @@ class plugin_percent extends plugin_base{
 		}
 
 		$result = ($resultrows / $totalrows) * 100;
+		$result = round($result, 1);
 
 		return $result;
 	}
